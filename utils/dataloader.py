@@ -39,31 +39,16 @@ class PolypDataset(data.Dataset):
                 transforms.ToTensor()])
             
         else:
-            # print('no augmentation')
-            print('Using RandomRotation, RandomFlip')
+            print('no augmentation')
             self.img_transform = transforms.Compose([
-                transforms.RandomRotation(90, resample=False, expand=False, center=None, fill=None),
-                transforms.RandomVerticalFlip(p=0.5),
-                transforms.RandomHorizontalFlip(p=0.5),
                 transforms.Resize((self.trainsize, self.trainsize)),
                 transforms.ToTensor(),
                 transforms.Normalize([0.485, 0.456, 0.406],
                                      [0.229, 0.224, 0.225])])
+            
             self.gt_transform = transforms.Compose([
-                transforms.RandomRotation(90, resample=False, expand=False, center=None, fill=None),
-                transforms.RandomVerticalFlip(p=0.5),
-                transforms.RandomHorizontalFlip(p=0.5),
                 transforms.Resize((self.trainsize, self.trainsize)),
                 transforms.ToTensor()])
-            # self.img_transform = transforms.Compose([
-            #     transforms.Resize((self.trainsize, self.trainsize)),
-            #     transforms.ToTensor(),
-            #     transforms.Normalize([0.485, 0.456, 0.406],
-            #                          [0.229, 0.224, 0.225])])
-            
-            # self.gt_transform = transforms.Compose([
-            #     transforms.Resize((self.trainsize, self.trainsize)),
-            #     transforms.ToTensor()])
             
 
     def __getitem__(self, index):

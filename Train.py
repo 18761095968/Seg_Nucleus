@@ -182,11 +182,11 @@ if __name__ == '__main__':
                         default=50, help='every n epochs decay learning rate')
 
     parser.add_argument('--train_path', type=str,
-                        default='/root/autodl-tmp/91360/train',
+                        default='C:/Users/lenovo/PycharmProjects/Data/91360/train',
                         help='path to train dataset')
 
     parser.add_argument('--test_path', type=str,
-                        default='/root/autodl-tmp/91360/val',
+                        default='C:/Users/lenovo/PycharmProjects/Data/91360/val',
                         help='path to testing Kvasir dataset')
 
     parser.add_argument('--train_save', type=str,
